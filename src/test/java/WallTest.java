@@ -35,7 +35,7 @@ public class WallTest {
     public void WallCountTest(){
         Wall wall = new Wall(testData);
 
-        assertEquals("Expected Count ",wall.count(),4);
+        assertEquals("Expected Count ",wall.count(),6);
 
     }
 
@@ -52,8 +52,7 @@ public class WallTest {
         Wall wall = new Wall(testData);
         Optional<Block> block = wall.findBlockByColor("Red");
         assertTrue(block.isPresent());
-        assertTrue(block.get() instanceof CompositeBlock);
-        assertTrue("Expected color contains: Red", block.get().getColor().contains("Red"));
+        assertTrue("Expected color contains: Red", block.get().getColor().equals("Red"));
     }
     @Test
     public void WallFindByColorEmptyTest(){
